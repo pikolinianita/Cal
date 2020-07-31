@@ -26,6 +26,7 @@ import pl.lcc.Cal.Entity.Lesson;
  * @author piko
  */
 
+@Component
 @Slf4j
 public class DefaultGoogleConnector implements GoogleConnector {
 

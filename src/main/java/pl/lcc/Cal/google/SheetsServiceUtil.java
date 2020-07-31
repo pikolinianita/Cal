@@ -27,7 +27,7 @@ class SheetsServiceUtil {
     public Sheets getSheetsService() throws IOException, GeneralSecurityException {
         log.info("---------------SheetService Bean");
         if (credential == null) {
-         credential = GoogleAuthorizeUtil.authorize();
+       //  credential = GoogleAuthorizeUtil.authorize();
         }
         return new Sheets.Builder(GoogleNetHttpTransport.newTrustedTransport(), JacksonFactory.getDefaultInstance(), credential).setApplicationName(APPLICATION_NAME).build();
     }
@@ -36,7 +36,7 @@ class SheetsServiceUtil {
     public Calendar getCalendarService() throws IOException, GeneralSecurityException {
          log.info("--------------Calendar Bean");
         if (credential == null) {
-         credential = GoogleAuthorizeUtil.authorize();
+    //     credential = GoogleAuthorizeUtil.authorize();
         }
          return new Calendar.Builder(GoogleNetHttpTransport.newTrustedTransport(), JacksonFactory.getDefaultInstance(), credential).setApplicationName(APPLICATION_NAME).build();
     }

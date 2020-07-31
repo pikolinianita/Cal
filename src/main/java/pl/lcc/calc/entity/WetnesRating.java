@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.Entity;
+package pl.lcc.calc.entity;
 
 /**
  *

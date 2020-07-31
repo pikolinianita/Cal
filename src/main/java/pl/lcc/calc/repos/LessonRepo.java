@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.Repos;
+package pl.lcc.calc.repos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import pl.lcc.Cal.Entity.Lesson;
-import pl.lcc.Cal.Entity.School;
-import pl.lcc.Cal.Entity.Topic;
+import pl.lcc.calc.entity.Lesson;
+import pl.lcc.calc.entity.School;
+import pl.lcc.calc.entity.Topic;
 
 /**
  *

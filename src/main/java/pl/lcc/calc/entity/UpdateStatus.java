@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.Repos;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import pl.lcc.Cal.Entity.Topic;
+package pl.lcc.calc.entity;
 
 /**
  *
  * @author piko
  */
-public interface TopicRepo extends JpaRepository<Topic, Long>{
-    
+public enum UpdateStatus {
+    ORIGINAL, PLACEHOLDER, CREATED, UPDATED, DELETED;
 }

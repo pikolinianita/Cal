@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.google;
+package pl.lcc.calc.google;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.List;
-import pl.lcc.Cal.Entity.Lesson;
+import pl.lcc.calc.entity.Lesson;
 
 /**
  *

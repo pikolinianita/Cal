@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.google;
+package pl.lcc.calc.google;
 
 import com.google.api.client.util.DateTime;
 import com.google.api.services.calendar.Calendar;
@@ -19,7 +19,7 @@ import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
-import pl.lcc.Cal.Entity.Lesson;
+import pl.lcc.calc.entity.Lesson;
 
 /**
  *

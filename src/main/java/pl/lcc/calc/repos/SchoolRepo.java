@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.Entity;
+package pl.lcc.calc.repos;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import pl.lcc.calc.entity.School;
 
 /**
  *
  * @author piko
  */
-public enum UpdateStatus {
-    ORIGINAL, PLACEHOLDER, CREATED, UPDATED, DELETED;
+public interface SchoolRepo extends JpaRepository<School, Long>{
+    
+    
+    
 }

@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.Repos;
+package pl.lcc.calc.repos;
 
+import pl.lcc.calc.repos.FileToDB;
+import pl.lcc.calc.repos.LessonRepo;
+import pl.lcc.calc.repos.TopicRepo;
+import pl.lcc.calc.repos.SchoolRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,21 +39,8 @@ public class ReposTest {
     @BeforeEach
     void initF(){
         log.info("Init");
-//        var dbload = new FileToDB();
-//        dbload.LoadSchools();
-//        dbload.LoadTopics();
     }
     
-    
-//    public ReposTest(TopicRepo tRepo, SchoolRepo sRepo, LessonRepo lRepo) {
-//        this.tRepo = tRepo;
-//        this.sRepo = sRepo;
-//        this.lRepo = lRepo;
-//        
-//        
-//
-//    }
-
     @Test
     void ReposTest() {
         log.info("tRepo: " + tRepo.count());

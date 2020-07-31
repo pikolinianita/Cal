@@ -1,4 +1,4 @@
-package pl.lcc.Cal;
+package pl.lcc.calc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

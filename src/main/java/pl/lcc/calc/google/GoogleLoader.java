@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.google;
+package pl.lcc.calc.google;
 
 import com.google.api.client.util.DateTime;
 import com.google.api.services.calendar.Calendar;
@@ -17,7 +17,7 @@ import java.time.ZoneOffset;
 import java.util.LinkedList;
 import java.util.List;
 //import static pl.lcc.Cal.google.SheetsServiceUtil.getCalendarService;
-import pl.lcc.Cal.Entity.Lesson;
+import pl.lcc.calc.entity.Lesson;
 
 /**
  *

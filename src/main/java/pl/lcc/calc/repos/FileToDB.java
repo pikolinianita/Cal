@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.Repos;
+package pl.lcc.calc.repos;
 
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,9 +20,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.lcc.Cal.Entity.School;
-import pl.lcc.Cal.Entity.Topic;
-import pl.lcc.Cal.Entity.WetnesRating;
+import pl.lcc.calc.entity.Lesson;
+import pl.lcc.calc.entity.School;
+import pl.lcc.calc.entity.Topic;
+import pl.lcc.calc.entity.WetnesRating;
 
 /**
  *
@@ -35,9 +39,14 @@ public class FileToDB {
     @Autowired
     SchoolRepo sRepo;
 
+    @Autowired
+    LessonRepo lRepo;
+    
     private static final String SCHOOL_PATH = "dbfiles/db_szkoly.txt";
 
     private static final String TOPIC_PATH = "dbfiles/db_topics.txt";
+    
+     private static final String FILE_PATH = "dbfiles/db.txt";
 
     @Bean
     CommandLineRunner LoadSchools() {
@@ -54,6 +63,15 @@ public class FileToDB {
             log.info("LoadTopics bean initialized with count: " + tRepo.count());
             tRepo.saveAll(loadTopicFromFile());
             log.info("LoadTopics bean initialized with count: " + tRepo.count());
+        };
+    }
+    
+     @Bean
+    CommandLineRunner LoadLessons() {
+        return args -> {
+            log.info("LoadLessons bean initialized with count: " + lRepo.count());
+            lRepo.saveAll(loadLessonsFromFile());
+            log.info("LoadLessons bean initialized with count: " + lRepo.count());
         };
     }
 
@@ -92,6 +110,22 @@ public class FileToDB {
 
         }
         return topicList;
+    }
+    
+    public List<Lesson> loadLessonsFromFile(String fileName) throws IOException, GeneralSecurityException {
+       
+        var gson = new GsonBuilder().create();
+        LinkedList<Lesson> list = new LinkedList<>();
+        try (var reader = new BufferedReader(new FileReader(fileName))) {
+            var token = new TypeToken<LinkedList<Lesson>>() {
+            }.getType();
+            list = gson.fromJson(reader, token);
+        }
+        return list;
+    }
+    
+    public List<Lesson> loadLessonsFromFile() throws IOException , GeneralSecurityException{
+        return loadLessonsFromFile(FILE_PATH);
     }
 
 }

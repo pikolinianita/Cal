@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.Repos;
+package pl.lcc.calc.repos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.lcc.Cal.Entity.School;
+import pl.lcc.calc.entity.Topic;
 
 /**
  *
  * @author piko
  */
-public interface SchoolRepo extends JpaRepository<School, Long>{
-    
-    
+public interface TopicRepo extends JpaRepository<Topic, Long>{
     
 }

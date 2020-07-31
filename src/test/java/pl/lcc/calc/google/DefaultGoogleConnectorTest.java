@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.lcc.Cal.google;
+package pl.lcc.calc.google;
 
+import pl.lcc.calc.google.GoogleConnector;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import static org.assertj.core.api.Assertions.*;

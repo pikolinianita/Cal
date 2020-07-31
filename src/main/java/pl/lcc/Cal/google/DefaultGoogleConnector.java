@@ -17,6 +17,7 @@ import java.time.ZoneOffset;
 import java.util.LinkedList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import pl.lcc.Cal.Entity.Lesson;
 
@@ -26,7 +27,6 @@ import pl.lcc.Cal.Entity.Lesson;
  */
 
 @Slf4j
-@Component
 public class DefaultGoogleConnector implements GoogleConnector {
 
     public static final String KOLOROWO_ID = "hjimc4788te0h4222kdnjtdce4@group.calendar.google.com";

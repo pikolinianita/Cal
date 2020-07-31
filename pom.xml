@@ -90,11 +90,11 @@
             <type>jar</type>
         </dependency>
         
-        <dependency>
+         <dependency>
             <groupId>de.adesso</groupId>
             <artifactId>junit-insights</artifactId>
             <version>1.1.0</version>
-        </dependency>
+        </dependency> 
         
     </dependencies>
 
@@ -137,17 +137,18 @@
                 </executions>
             </plugin>
             
-            <plugin>
+        <!--      <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
-          <!--      <configuration>
+              <configuration>
                     <systemPropertyVariables>
                         <de.adesso.junitinsights.enabled>true</de.adesso.junitinsights.enabled>
                         <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
                     </systemPropertyVariables>
-                </configuration> -->
-            </plugin>
+                </configuration>      
+            </plugin>  -->
+
                         
         </plugins>
     </build>

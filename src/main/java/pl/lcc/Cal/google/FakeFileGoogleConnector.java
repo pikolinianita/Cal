@@ -8,12 +8,15 @@ package pl.lcc.Cal.google;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.List;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.stereotype.Component;
 import pl.lcc.Cal.Entity.Lesson;
 
 /**
  *
  * @author piko
  */
+@Component
 public class FakeFileGoogleConnector implements GoogleConnector{
 
     @Override

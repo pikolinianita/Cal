@@ -1,0 +1,68 @@
+Tytu³	Mokrosc	ile osób	rok zajêæ	Uwagi
+Si³a powietrza	S	0	1	
+Wulkany, tornada i trzêsienia ziemi	M	0	1	
+Dlaczego du¿e komary chodz¹ po wodzie?	M	0	1	
+Magia dŸwiêku	S	0	1	
+Têcza w szklance, czy to mo¿liwe ? Nauka o gêstoœci.	M	0	1	
+Gdzie mieszka Œwiêty Miko³aj?""/""Przygoda z magnetyzmem	S	0	1	
+Lasery - co to takiego	S	0	1	
+Kolorowo na bia³o, czyli œniegowo-lodowe zajêcia	M	0	1	
+Suchy lód - niesamowite w³aœciwoœci dwutlenku wêgla	M	0	1	
+Burza i groŸne b³yskawice czyli ma³e co nieco o elektrycznoœci	S	0	1	
+Jajko - niesamowicie wytrzyma³a konstrukcja	S	0	1	
+Grawitacja, co to takiego?	S	0	1	
+Niesamowite w³aœciwoœci p³ynów nieniutonowskich	M	0	1	
+Kwasy i zasady czyli dlaczego magiczny p³yn zmienia kolory	M	0	1	
+Oczyszczanie wody - budujemy filtr wodny	M	0	1	
+Metale	M	0	1	
+Ukryta wiadomoœæ	S/M	0	2	
+Sk¹d siê bior¹ dŸwiêki, czyli o instrumentach s³ów kilka	S	0	2	
+Ciekawostki o ciœnieniu	M	0	2	
+Dlaczego oddychamy?	S	0	2	
+Œwiat kolorowych soli chemicznych	M	0	2	
+Si³a	S	0	2	
+Doœwiadczenia mi³osne	M	0	2	
+Charakteryzacja filmowa	M	0	2	
+Przygoda z dwutlenkiem wêgla	M	0	2	
+Przygody z suchym lodem ci¹g dalszy	M	0	2	
+Rozdzielanie substancji	S/M	0	2	
+Elektrycznoœæ 	S	0	2	
+Dlaczego samolot lata	S	0	2	
+Poznajmy ultrafiolet	M	0	2	
+Magia zwierciad³a	S	0	2	
+Slime, czyli glut	M	0	2	
+Tonie czy p³ywa?	S/M	0	3	
+Zajêcia zimowe	S/M	0	3	
+Myde³ka	M	0	3	
+Poznaj elektrycznoœæ	S	0	3	
+Iluzje optyczne	S	0	3	
+Fontanna	M	0	3	
+Niezwyk³y mikroskop	S	0	3	
+Si³a odœrodkowa	S	0	3	
+Piasek inaczej	M	0	3	
+B¹dŸ jak Detektyw	S/M	0	3	
+Sprê¿ystoœæ. Zabawa z fizyk¹	S	0	3	
+Bia³kowy klej	M	0	3	
+Wstêga Mobiusa	S	0	3	
+Œwieczki	M	0	3	
+Elektroliza	M	0	3	
+Nurek	M	0	3	
+Pojawiam siê i znikam, czyli co to s¹ oscylacje		0	3	
+Nowy7		0	3	
+Równowaga		0	4	
+Magnetyczne glutki		0	4	
+Co to jest korozja		0	4	
+Zabawa dŸwiêkiem - bzyczenie		0	4	
+Co to znaczy, ¿e coœ wa¿y?		0	4	
+Elektrycznoœæ na weso³o		0	4	
+sztuczki		0	4	
+Prosty silnik		0	4	
+kryszta³		0	4	
+Chemiczne d¿d¿ownice		0	4	
+Gazy- hel		0	4	
+Jak s³oñ myje zêby		0	4	
+Gazy - powietrze		0	4	
+Eksperymenty z kwasami zasadami		0	4	
+Energie przysz³oœci		0	4	
+Zmys³y - co to takiego?		0	4	
+Ró¿ne oblicza wody		0	4	

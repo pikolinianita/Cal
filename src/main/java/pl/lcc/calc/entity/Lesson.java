@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -45,11 +46,11 @@ public class Lesson implements Serializable {
     @Column(name = "googleID")
     String googleID;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "name")
     Topic topic;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "schoolNumber")
     School school;
 

@@ -8,9 +8,11 @@ package pl.lcc.calc.front;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.data.renderer.TemplateRenderer;
 import com.vaadin.flow.router.Route;
 import java.time.LocalDate;
 import java.time.Month;
+import lombok.extern.slf4j.Slf4j;
 import pl.lcc.calc.entity.Lesson;
 import pl.lcc.calc.service.LessonsSource;
 
@@ -18,7 +20,8 @@ import pl.lcc.calc.service.LessonsSource;
  *
  * @author piko
  */
-@Route
+//@Route
+@Slf4j
 public class DayView extends VerticalLayout {
 
     private final LessonsSource service;
@@ -40,12 +43,26 @@ public class DayView extends VerticalLayout {
     }
 
     private void createElements() {
+        log.info("Create Elements");      
+
+        setSpacing(false);
+        setMargin(false);
+        
+        var list = service.getFromDay(day);
+        list.removeIf(lesson -> lesson.getTopic() == null || lesson.getSchool() == null);
+        
         add(new Text(day.toString()));
         grid = new Grid<>(Lesson.class);
+        //grid.getStyle().
+        grid.removeAllColumns();
+        grid.addColumn(TemplateRenderer.<Lesson>of(
+                "<div style$=\"background-color:[[item.bkColor]]\"> [[item.topic]] <br> SP [[item.school]] </div>")
+                .withProperty("topic", lesson -> lesson.getTopic().getName())
+                .withProperty("bkColor", lesson -> lesson.getSchool().getYear() == 2 ? "powderblue" : "red")
+                .withProperty("school", lesson -> lesson.getSchool().getSchoolNumber())
+        );
+        grid.setItems(list);        
         add(grid);
-        grid.setColumns("topic", "school", "week");
-        grid.setItems(service.getFromDay(day));
-        grid.getDataProvider().refreshAll();
     }
 
 }

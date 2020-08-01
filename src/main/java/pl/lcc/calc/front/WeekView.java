@@ -20,7 +20,7 @@ import pl.lcc.calc.service.LessonsSource;
 @Route
 public class WeekView extends HorizontalLayout {
     
-    DayView[] week;
+    DayView[] week = new DayView[5];
     
     LessonsSource service;
 
@@ -32,7 +32,8 @@ public class WeekView extends HorizontalLayout {
 //            week[i] = new DayView(service, startDate.plusDays(i));
 //        }
         IntStream.rangeClosed(0, 4)
-                .forEach(i -> {week[i] = new DayView(service, startDate.plusDays(i));
+                .forEach(i -> {week[i] = 
+                        new DayView(service, startDate.plusDays(i));
                         add(week[i]);
                                 });
     }

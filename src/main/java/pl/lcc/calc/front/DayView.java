@@ -12,28 +12,40 @@ import com.vaadin.flow.router.Route;
 import java.time.LocalDate;
 import java.time.Month;
 import pl.lcc.calc.entity.Lesson;
-import pl.lcc.calc.repos.LessonRepo;
-import pl.lcc.calc.service.CalendarService;
+import pl.lcc.calc.service.LessonsSource;
 
 /**
  *
  * @author piko
  */
 @Route
-public class DayView extends VerticalLayout {        
-    
-    private final CalendarService service;
-    
-    Grid<Lesson> grid;     
-    
-    public DayView(CalendarService srv) {
+public class DayView extends VerticalLayout {
+
+    private final LessonsSource service;
+
+    Grid<Lesson> grid;
+
+    LocalDate day;
+
+    public DayView(LessonsSource srv) {
         this.service = srv;
-        add(new Text("Welcome to MainView."));
+        day = LocalDate.of(2020, Month.MARCH, 13);
+        createElements();
+    }
+
+    public DayView(LessonsSource service, LocalDate day) {
+        this.service = service;
+        this.day = day;
+        createElements();
+    }
+
+    private void createElements() {
+        add(new Text(day.toString()));
         grid = new Grid<>(Lesson.class);
         add(grid);
         grid.setColumns("topic", "school", "week");
-        grid.setItems(service.getFromDay(LocalDate.of(2020, Month.MARCH, 13)));
+        grid.setItems(service.getFromDay(day));
         grid.getDataProvider().refreshAll();
     }
-    
+
 }

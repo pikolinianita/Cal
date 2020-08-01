@@ -10,7 +10,7 @@
     </parent>
     <groupId>pl.lcc</groupId>
     <artifactId>Cal</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>Cal</name>
     <description>Project for managing calendar files</description>
 

@@ -28,9 +28,11 @@ public class WeekView extends HorizontalLayout {
         this.service = service;        
         var startDate = LocalDate.of(2020, Month.MARCH, 9);
         add(new Text(startDate.toString()));
-//        for (int i = 0; i< 5; i++){
-//            week[i] = new DayView(service, startDate.plusDays(i));
-//        }
+
+        setMargin(false);
+        setPadding(false);
+        setSpacing(false);
+        
         IntStream.rangeClosed(0, 4)
                 .forEach(i -> {week[i] = 
                         new DayView(service, startDate.plusDays(i));

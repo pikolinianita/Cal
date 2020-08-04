@@ -6,6 +6,7 @@
 package pl.lcc.calc.front;
 
 import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.renderer.TemplateRenderer;
@@ -45,24 +46,31 @@ public class DayView extends VerticalLayout {
     private void createElements() {
         log.info("Create Elements");      
 
-        setSpacing(false);
-        setMargin(false);
+        setStyles();
         
         var list = service.getFromDay(day);
         list.removeIf(lesson -> lesson.getTopic() == null || lesson.getSchool() == null);
         
         add(new Text(day.toString()));
-        grid = new Grid<>(Lesson.class);
+        grid = new Grid<>();
         //grid.getStyle().
-        grid.removeAllColumns();
+        //grid.removeAllColumns();
         grid.addColumn(TemplateRenderer.<Lesson>of(
                 "<div style$=\"background-color:[[item.bkColor]]\"> [[item.topic]] <br> SP [[item.school]] </div>")
                 .withProperty("topic", lesson -> lesson.getTopic().getName())
-                .withProperty("bkColor", lesson -> lesson.getSchool().getYear() == 2 ? "powderblue" : "red")
+                .withProperty("bkColor", lesson -> lesson.getSchool().getYear() == 2 ? "lavender" : "moccasin")
                 .withProperty("school", lesson -> lesson.getSchool().getSchoolNumber())
-        );
+        )
+                .setHeader(day.toString())
+                .setFooter( new Button ("Add Event"));
         grid.setItems(list);        
         add(grid);
+    }
+
+    private void setStyles() {
+        setSpacing(false);
+        setMargin(false);
+        setPadding(false);
     }
 
 }

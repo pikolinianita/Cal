@@ -21,13 +21,15 @@ import pl.lcc.calc.service.LessonsSource;
  *
  * @author piko
  */
-//@Route
+
 @Slf4j
 public class DayView extends VerticalLayout {
 
     private final LessonsSource service;
 
     Grid<Lesson> grid;
+    
+    Button addButton;
 
     LocalDate day;
 
@@ -53,8 +55,10 @@ public class DayView extends VerticalLayout {
         
         add(new Text(day.toString()));
         grid = new Grid<>();
-        //grid.getStyle().
-        //grid.removeAllColumns();
+        addButton = new Button ("Add Event");
+        addButton.addClickListener(e -> new AddLessonDialog().open());
+        
+        
         grid.addColumn(TemplateRenderer.<Lesson>of(
                 "<div style$=\"background-color:[[item.bkColor]]\"> [[item.topic]] <br> SP [[item.school]] </div>")
                 .withProperty("topic", lesson -> lesson.getTopic().getName())
@@ -62,7 +66,7 @@ public class DayView extends VerticalLayout {
                 .withProperty("school", lesson -> lesson.getSchool().getSchoolNumber())
         )
                 .setHeader(day.toString())
-                .setFooter( new Button ("Add Event"));
+                .setFooter(addButton);
         grid.setItems(list);        
         add(grid);
     }

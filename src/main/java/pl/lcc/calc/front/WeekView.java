@@ -27,11 +27,11 @@ public class WeekView extends HorizontalLayout {
     public WeekView(LessonsSource service) {
         this.service = service;        
         var startDate = LocalDate.of(2020, Month.MARCH, 9);
-        add(new Text(startDate.toString()));
-
+        
         setMargin(false);
         setPadding(false);
         setSpacing(false);
+        setSizeFull();
         
         IntStream.rangeClosed(0, 4)
                 .forEach(i -> {week[i] = 

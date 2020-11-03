@@ -11,9 +11,15 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.renderer.TemplateRenderer;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.spring.annotation.UIScope;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.function.BiConsumer;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import pl.lcc.calc.entity.Lesson;
 import pl.lcc.calc.service.LessonsSource;
 
@@ -23,24 +29,38 @@ import pl.lcc.calc.service.LessonsSource;
  */
 
 @Slf4j
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class DayView extends VerticalLayout {
 
     private final LessonsSource service;
+    
+    private  SchoolDataDisplay schoolOutlet;
+    
+    private  TopicDataDisplay topicOutlet;
 
     Grid<Lesson> grid;
     
     Button addButton;
 
-    LocalDate day;
+    private LocalDate day;
 
-    public DayView(LessonsSource srv) {
-        this.service = srv;
-        day = LocalDate.of(2020, Month.MARCH, 13);
-        createElements();
+    @Autowired
+    private SideWindow outputCall;
+    
+    public DayView(LessonsSource srv) {        
+        this(srv,LocalDate.of(2020, Month.MARCH, 13));
+        System.out.println("_______________----------------__________________Deprecated Call day viwe _______________----------------__________________");
+//        this.service = srv;
+//        day = LocalDate.of(2020, Month.MARCH, 13);
+//        createElements();
+       
     }
 
-    public DayView(LessonsSource service, LocalDate day) {
+    public DayView(LessonsSource service, LocalDate day) {//, SchoolDataDisplay schO, TopicDataDisplay topO
         this.service = service;
+      //  this.schoolOutlet = schO;
+      //  this.topicOutlet = topO;
         this.day = day;
         createElements();
     }
@@ -67,6 +87,13 @@ public class DayView extends VerticalLayout {
         )
                 .setHeader(day.toString())
                 .setFooter(addButton);
+        grid.addItemClickListener(cL -> {
+            System.out.println("listenrt");
+            System.out.println(outputCall);
+            outputCall.putTextIntoLabel(cL.getItem().getTopic().toString());
+        }
+        );
+        
         grid.setItems(list);        
         add(grid);
     }
